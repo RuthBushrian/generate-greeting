@@ -52,7 +52,6 @@ app.post('/generateGreeting', async (req, res) => {
     temperature: 0.7,
     n:3
   }).then(response => {
-    console.log(response);
       res.send({greetings:[response.choices[0].message.content,response.choices[1].message.content,response.choices[2].message.content]})
     })
     .catch(error => console.error(error));

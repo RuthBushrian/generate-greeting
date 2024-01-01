@@ -79,7 +79,6 @@ export class GenerateGreetingComponent {
         this.selectedGreetingIndex = 0;
 
         this.http.post<any>('http://localhost:3000/generateGreeting', data).subscribe((response) => {
-          console.log(response, response.greetings);
           this.greetings = response.greetings;
           this.selectedGreetingIndex = 0;
         });
@@ -97,14 +96,4 @@ export class GenerateGreetingComponent {
   changeGreeting() {
     this.selectedGreetingIndex = (this.selectedGreetingIndex + 1) % this.greetings.length;
   }
-  // onSubmit() {
-  //   // Handle form submission logic here
-  //   if (this.myForm.valid) {
-  //     // Form is valid, proceed with submission
-  //     console.log('Form submitted:', this.myForm.value);
-  //   } else {
-  //     // Form is invalid, handle accordingly
-  //     console.log('Form is invalid');
-  //   }
-  // }
 }
