@@ -1,0 +1,94 @@
+<!-- generate-greeting.component.html -->
+<form *ngIf="showInputs" [formGroup]="myForm">
+    <label>
+      Name:
+      <input type="text" formControlName="name" />
+      <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">
+        Name is required!
+      </div>
+      
+    </label>
+  
+    <label>
+      Select Greeting Type:
+      <select formControlName="greetingType">
+        <option value="" disabled>Select greeting type</option>
+        <option *ngFor="let type of greetingTypes" [value]="type">{{ type }}</option>
+      </select>
+      <div *ngIf="myForm.get('greetingType')?.hasError('required') && myForm.get('greetingType')?.touched">
+        greetingType is required!
+      </div>
+    </label>
+  
+    <label>
+      Atmosphere:
+      <input type="text" formControlName="atmosphere" />
+      <div *ngIf="myForm.get('atmosphere')?.hasError('required') && myForm.get('atmosphere')?.touched">
+        atmosphere is required!
+      </div>
+    </label>
+
+    <label>
+        From:
+        <input type="text" formControlName="from" />
+        <div *ngIf="myForm.get('from')?.hasError('required') && myForm.get('from')?.touched">
+          from is required!
+        </div>
+      </label>
+  
+    <label>
+      Select Event Type:
+      <select formControlName="eventType" (change)="onEventTypeChange()">
+        <option value="" disabled>Select event type</option>
+        <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
+      </select>
+      <div *ngIf="myForm.get('eventType')?.hasError('required') && myForm.get('eventType')?.touched">
+        eventType is required!
+      </div>
+    </label>
+  
+    <div *ngIf="showAgeInput">
+      <label>
+        Age:
+        <input type="number" formControlName="age" />
+      </label>
+    </div>
+  
+    <div *ngIf="showHobbiesInput">
+      <label>
+        Hobbies:
+        <input type="text" formControlName="hobbies" />
+      </label>
+    </div>
+  
+    <div *ngIf="showJobInput">
+      <label>
+        Job:
+        <input type="text" formControlName="job" />
+      </label>
+    </div>
+  
+    <div *ngIf="showAspirationsInput">
+      <label>
+        Aspirations:
+        <input type="text" formControlName="aspirations" />
+      </label>
+    </div>
+  
+    <button type="submit" (click)="generateGreeting()">Generate Greeting</button>
+  </form>
+
+  
+  <div  *ngIf="greetings.length > 0 && showInputs==false">
+    <div (click)="showInputs=true">
+      <h2>Selected Options:</h2>
+      <p>Name: {{ myForm?.get('name')?.value }}</p>
+      <p>Greeting Type: {{ myForm?.get('greetingType')?.value }}</p>
+      <p>Atmosphere: {{ myForm?.get('atmosphere')?.value }}</p>  
+    </div>
+    <h2>Generated Greetings:</h2>
+    <p white-space: pre-line>{{ greetings[selectedGreetingIndex] }}</p>
+  
+    <button type="button" (click)="changeGreeting()">Change Greeting</button>
+  </div>
+  
