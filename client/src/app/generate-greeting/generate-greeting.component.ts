@@ -79,7 +79,9 @@ export class GenerateGreetingComponent {
         this.selectedGreetingIndex = 0;
 
         this.http.post<any>('http://localhost:3000/generateGreeting', data).subscribe((response) => {
-          this.greetings = response.greetings;
+        console.log(response.greetings);
+          
+        this.greetings = response.greetings;
           this.selectedGreetingIndex = 0;
         });
       }

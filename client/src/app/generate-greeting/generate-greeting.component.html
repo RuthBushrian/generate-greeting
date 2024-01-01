@@ -87,8 +87,7 @@
       <p>Atmosphere: {{ myForm.get('atmosphere')?.value }}</p>  
     </div>
     <h2>Generated Greetings:</h2>
-    <p white-space: pre-line>{{ greetings[selectedGreetingIndex] }}</p>
-  
+    <p [style.white-space]="'pre-line'" [innerHTML]="greetings[selectedGreetingIndex].replace('\n', '&lt;br&gt;')"></p>
     <button type="button" (click)="changeGreeting()">Change Greeting</button>
   </div>
   
