@@ -82,9 +82,9 @@
   <div  *ngIf="greetings.length > 0 && showInputs==false">
     <div (click)="showInputs=true">
       <h2>Selected Options:</h2>
-      <p>Name: {{ myForm?.get('name')?.value }}</p>
-      <p>Greeting Type: {{ myForm?.get('greetingType')?.value }}</p>
-      <p>Atmosphere: {{ myForm?.get('atmosphere')?.value }}</p>  
+      <p>Name: {{ myForm.get('name')?.value }}</p>
+      <p>Greeting Type: {{ myForm.get('greetingType')?.value }}</p>
+      <p>Atmosphere: {{ myForm.get('atmosphere')?.value }}</p>  
     </div>
     <h2>Generated Greetings:</h2>
     <p white-space: pre-line>{{ greetings[selectedGreetingIndex] }}</p>
