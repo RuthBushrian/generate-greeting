@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-generate-greeting',
-  templateUrl: './generate-greeting.component.html',
+  styleUrls: ['./generate-greeting.component.css'], 
+  templateUrl: './generate-greeting.component.html'
 })
 export class GenerateGreetingComponent {
   myForm: FormGroup;

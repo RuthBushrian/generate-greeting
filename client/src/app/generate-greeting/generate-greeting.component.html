@@ -3,7 +3,7 @@
     <label>
       Name:
       <input type="text" formControlName="name" />
-      <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">
+      <div class="error-message" *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">
         Name is required!
       </div>
       
@@ -15,7 +15,7 @@
         <option value="" disabled>Select greeting type</option>
         <option *ngFor="let type of greetingTypes" [value]="type">{{ type }}</option>
       </select>
-      <div *ngIf="myForm.get('greetingType')?.hasError('required') && myForm.get('greetingType')?.touched">
+      <div class="error-message" *ngIf="myForm.get('greetingType')?.hasError('required') && myForm.get('greetingType')?.touched">
         greetingType is required!
       </div>
     </label>
@@ -23,7 +23,7 @@
     <label>
       Atmosphere:
       <input type="text" formControlName="atmosphere" />
-      <div *ngIf="myForm.get('atmosphere')?.hasError('required') && myForm.get('atmosphere')?.touched">
+      <div class="error-message" *ngIf="myForm.get('atmosphere')?.hasError('required') && myForm.get('atmosphere')?.touched">
         atmosphere is required!
       </div>
     </label>
@@ -31,7 +31,7 @@
     <label>
         From:
         <input type="text" formControlName="from" />
-        <div *ngIf="myForm.get('from')?.hasError('required') && myForm.get('from')?.touched">
+        <div class="error-message" *ngIf="myForm.get('from')?.hasError('required') && myForm.get('from')?.touched">
           from is required!
         </div>
       </label>
@@ -42,7 +42,7 @@
         <option value="" disabled>Select event type</option>
         <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
       </select>
-      <div *ngIf="myForm.get('eventType')?.hasError('required') && myForm.get('eventType')?.touched">
+      <div class="error-message" *ngIf="myForm.get('eventType')?.hasError('required') && myForm.get('eventType')?.touched">
         eventType is required!
       </div>
     </label>
@@ -80,14 +80,16 @@
 
   
   <div  *ngIf="greetings.length > 0 && showInputs==false">
-    <div (click)="showInputs=true">
-      <h2>Selected Options:</h2>
-      <p>Name: {{ myForm.get('name')?.value }}</p>
-      <p>Greeting Type: {{ myForm.get('greetingType')?.value }}</p>
-      <p>Atmosphere: {{ myForm.get('atmosphere')?.value }}</p>  
+    <div (click)="showInputs=true" class="generated-section">
+      <h5>Selected Options:</h5>
+      <span>Name: {{ myForm.get('name')?.value }} -- </span>
+      <span> Greeting Type: {{ myForm.get('greetingType')?.value }}  --  </span>
+      <span> Atmosphere: {{ myForm.get('atmosphere')?.value }}  </span>  
     </div>
-    <h2>Generated Greetings:</h2>
+    <div class="generated-section">
+    <h5>Generated Greetings:</h5>
     <p [style.white-space]="'pre-line'" [innerHTML]="greetings[selectedGreetingIndex].replace('\n', '&lt;br&gt;')"></p>
     <button type="button" (click)="changeGreeting()">Change Greeting</button>
+  </div>
   </div>
   

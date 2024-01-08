@@ -1,3 +1,144 @@
-p {
+/* generate-greeting.component.css */
+body {
+    padding: 100px;
+    /* font-family: 'Arial', sans-serif; Change the font-family as needed */
+    background-color: #f8f8f8; /* Set a background color for the entire page */
+  }
+
+form {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  form:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+  div.error-message {
+    color: #e44d26;
+    font-size: 12px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .selected-options {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .generated-greetings {
+    margin-top: 20px;
+  }
+  
+  .generated-greetings p {
     white-space: pre-line;
-}
+    font-size: 16px;
+    color: #333;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+
+  /* generate-greeting.component.css */
+
+.generated-section {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .generated-section:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  .generated-section h3 {
+    color: #333;
+  }
+  
+  .generated-options,
+  .generated-greetings {
+    margin-top: 20px;
+  }
+  
+  .generated-options p {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .generated-options p strong {
+    color: #333;
+  }
+  
+  .generated-greetings p {
+    white-space: pre-line;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .change-button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .change-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
