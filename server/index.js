@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 require('openai/shims/node');
 const OpenAI = require("openai");
 const cors = require('cors');
-
 const app = express();
+
+require('dotenv').config();
 const openai = new OpenAI(); 
+
 const corsOptions = {
   origin: 'http://localhost:4200',
   optionsSuccessStatus: 200, 
