@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('openai/shims/node');
 const OpenAI = require("openai");
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
 const openai = new OpenAI(); 
 const corsOptions = {
   origin: 'http://localhost:4200',
@@ -57,6 +57,4 @@ app.post('/generateGreeting', async (req, res) => {
     .catch(error => console.error(error));
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports= app;
