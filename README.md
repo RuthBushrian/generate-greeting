@@ -1,6 +1,6 @@
 ## Project Overview
 
-This project utilizes the OpenAI GPT-3 API to generate personalized greetings. The server and client components work together to provide a seamless experience for users.
+This project utilizes the OpenAI GPT-3.5 API to generate personalized greetings. The server and client components work together to provide a seamless experience for users.
 
 ## Getting Started
 
